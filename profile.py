@@ -9,9 +9,9 @@ node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD"
 node.routable_control_ip = "true"
 
 # Run the bash file to setup Anaconda
-#node.addService(rspec.Execute(shell="sh", command="sudo chmod 755 /local/repository/setup.sh"))
-node.addService(rspec.Execute("sh", "sudo /local/repository/setup.sh"))
-rspec.addResource(node)
+node.addService(rspec.Execute(shell="sh", command="sudo chmod 755 /local/repository/setup.sh"))
+node.addService(rspec.Execute(shell="sh", command="sudo /local/repository/setup.sh"))
+
 
 node.addService(rspec.Execute(shell="/bin/sh",
                               command='git clone https://github.com/longld/peda.git ~/peda'))
